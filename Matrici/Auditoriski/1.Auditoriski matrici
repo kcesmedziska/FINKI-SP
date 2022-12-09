@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define max 100
+
+int main()
+{
+    int a[max][max],n,m,i,j,pzbir=0,nzbir=0;
+    scanf("%d %d", &n,&m);
+
+    for(i=0;i<n;i++)
+        for(j=0;j<m;j++)
+            scanf("%d", &a[i][j]);
+
+    for(i=0;i<n;i++)
+        for(j=0;j<m;j++){
+            if(j%2!=0)
+                pzbir+=a[i][j];
+            if(i%2==0)
+                nzbir+=a[i][j];
+        }
+    printf("Razlika: %d", nzbir-pzbir);
+
+
+    return 0;
+}
