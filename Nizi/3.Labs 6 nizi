@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define max 100
+
+int main()
+{
+    int n,niza[max],i,k;
+    scanf("%d", &n);
+    for(i=0;i<n;i++)
+        scanf("%d", &niza[i]);
+    scanf("%d", &k);
+
+    for(i=0;i<n;i++){
+        if(niza[i]<k)
+            printf("%d ", niza[i]);
+    }
+    for(i=0;i<n;i++){
+        if(niza[i]>k)
+            printf("%d ", niza[i]);
+    }
+
+
+    return 0;
+}
