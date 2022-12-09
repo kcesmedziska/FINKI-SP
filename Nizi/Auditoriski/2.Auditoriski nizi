@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define max 100
+
+int main()
+{
+    int n,niza[max],i,parni=0, neparni=0,brparni=0,brneparni=0;
+    float odnos;
+    scanf("%d", &n);
+    for (i = 0; i < n; ++i)
+        scanf("%d", &niza[i]);
+        for(i=0;i<n;i++)
+            if(niza[i]%2==0){
+                parni=parni+niza[i];
+                brparni++;
+            }
+            else{
+                neparni=neparni+niza[i];
+                brneparni++;
+            }
+    odnos=(float)brparni/brneparni;
+
+    printf("Suma na parni: %d\n", parni);
+    printf("Suma na neparni: %d\n", neparni);
+    printf("Odnosot na parni sprema neparni e %f\n", odnos);
+
+
+    return 0;
+}
