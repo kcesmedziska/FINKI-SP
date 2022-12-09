@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n,m,i,j,a[100],b[100], niza[200],k,temp;
+    scanf("%d", &m);
+    for(i=0;i<m;i++){
+        scanf("%d", &a[i]);
+        niza[i]=a[i];
+    }
+    k=i;
+    scanf("%d", &n);
+    for(j=0;j<n;j++){
+        scanf("%d", &b[j]);
+        niza[k]=b[j];
+        k++;
+    }
+
+    for (i = 0;i<n+m;++i)
+        for (j = i + 1;j< n+m;++j)
+            if (niza[i] > niza[j])
+                {
+
+                    temp =  niza[i];
+                    niza[i] = niza[j];
+                    niza[j] = temp;
+
+                }
+    for(i=0;i<n+m;i++)
+        printf("%d ", niza[i]);
+
+        
+    return 0;
+}
