@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char azbuka[26],c;
+    int i,k;
+
+    for(i=0;i<26;i++)
+        azbuka[i]= 'A' + i;
+
+    scanf("%c %d", &c,&k);
+    printf("%c", azbuka[(c-'A'+k)%26]);
+
+
+
+    return 0;
+}
