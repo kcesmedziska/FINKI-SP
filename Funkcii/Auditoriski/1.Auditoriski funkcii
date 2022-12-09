@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define PI 3.14
+
+float dijametar(float radius){
+    return radius*2.0;
+}
+float perimetar(float radius){
+    return 2*radius*PI;
+}
+float plostina(float radius){
+    return radius*radius*PI;
+}
+
+int main()
+{
+    float r;
+    scanf("%f", &r);
+
+    printf("Dijametarot e %.2f \n", dijametar(r));
+    printf("Perimetarot e %.2f \n", perimetar(r));
+    printf("Plostinata e %.2f \n", plostina(r));
+
+    return 0;
+}
