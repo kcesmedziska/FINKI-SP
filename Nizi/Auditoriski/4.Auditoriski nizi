@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define max 100
+
+int main()
+{
+    int niza[max],i,n,raste=0,opagja=0;
+    scanf("%d", &n);
+    for(i=0;i<n;++i)
+        scanf("%d", &niza[i]);
+    for(i=0;i<n-1;++i)
+        if(niza[i]<=niza[i+1])
+            raste=1;
+    for(i=0;i<n-1;++i){
+        if(niza[i]>=niza[i+1])
+            opagja=1;
+    }
+    if(raste==opagja)
+        printf("Nizata ni raste ni opagja");
+    else if(raste==1)
+        printf("Nizata raste");
+    else if(opagja==1)
+        printf("Nizata opagja");
+
+
+    return 0;
+}
