@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define max 100
+
+int main()
+{
+    int niza[max][max];
+    int n,i,j,m,k,temp;
+
+    scanf("%d",&n);
+    for(i = 0; i < n; i++){
+        scanf("%d", &m);
+        for(j = 1; j < m+1; j++){
+            scanf("%d", &niza[i][j]);
+        }
+        scanf("%d", &k);
+
+        for(j = k; j < m+1; j+=k){
+            temp = niza[i][j-1];
+            niza[i][j-1] = niza[i][j];
+            niza[i][j] = temp;
+
+        }
+        niza[i][0] = m;
+    }
+    for(i = 0; i < n; i++){
+        for(j = 1; j < niza[i][0]+1; j++){
+            printf("%d ", niza[i][j]);
+        }
+        printf("\n");
+    }
+
+
+    return 0;
+}
