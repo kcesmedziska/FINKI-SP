@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define max 100
+
+int main() {
+    int a[max], n, i, j, k, br = 0;
+    scanf("%d", &n);
+    for (i = 0; i < n; ++i)
+        scanf("%d", &a[i]);
+    for (i = 0; i < n - br; ++i)
+        for (j = i + 1; j < n - br; ++j)
+            if (a[i] == a[j]) {
+                for (k = j; k < n - 1 - br; ++k)
+                    a[k] = a[k + 1];
+                    br++;
+                    --j;
+                }
+    n -= br;
+    for (i = 0; i < n; ++i)
+        printf("%d\t", a[i]);
+        
+  return 0;
+}
