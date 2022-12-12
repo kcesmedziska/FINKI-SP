@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int zbir(int n){
+    int zb=0, i;
+    for(i=0;i<n;i++)
+        zb=zb+i;
+    return zb;
+}
+int faktoriel(int n){
+    int rez=1, i;
+    for(i=1;i<=n;i++)
+        rez=rez*i;
+    return rez;
+}
+
+int main()
+{
+    int n,i,rez=0,zb;
+    scanf("%d", &n);
+    for(i=1;i<n;i++){
+        zb=zbir(i);
+        rez+=faktoriel(zb);
+        printf("%d! + ", zb);
+    }
+    zb=zbir(n);
+    rez+=faktoriel(zb);
+    printf("%d! = %d", zb, rez);
+
+
+    return 0;
+}
