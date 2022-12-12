@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int prost_br(int n){
+    int i;
+    if(n<4)
+        return 1;
+    for(i=2;i<n;i++){
+        if(n%i==0)
+            return 0;
+    }
+    return 1;
+}
+int zbir (int n){
+    int zb=0,temp=n;
+    while(temp>0){
+        zb=zb+temp%10;
+        temp/=10;
+    }
+    return zb;
+}
+
+
+int main()
+{
+    int i,br=0;
+    for(i=2;i<10000;i++)
+        if(prost_br(i)!=0 && prost_br(zbir(i))){
+            printf("%d\t", i);
+            br++;
+        }
+    printf("\nVkupno broevi: %d", br);
+
+
+    return 0;
+}
