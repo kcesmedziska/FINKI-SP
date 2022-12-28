@@ -1,25 +1,33 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int divisibleByK(int number, int k){
-        if(number%k == 0) 
-                return 1;
-        else 
-                return 0;
-}
-int nextDivisibleByK(int number,int k){
-    if(divisibleByK(number+1,k)) 
-            return number+1;
-    else 
-            return nextDivisibleByK(number+1,k);
-}
-int main() {
+void sort(int *a,int *b,int *c){
+        int temp;
+        if(*a<*b){
+            temp=*a;
+            *a=*b;
+            *b=temp;
+        }
+        if(*a<*c){
+            temp=*a;
+            *a=*c;
+            *c=temp;
+        }
+        if(*b<*c){
+            temp=*b;
+            *b=*c;
+            *c=temp;
+        }
 
-    int a, b, k;
-    scanf("%d %d %d", &a, &b, &k);
 
-    for (int i = a; i <= b; i++) {
-        printf("%d -> %d\n", i, nextDivisibleByK(i, k));
-    }
+          }
+
+int main()
+{
+    int a,b,c;
+    scanf("%d%d%d", &a,&b,&c);
+    sort(&a,&b,&c);
+    printf("%d %d %d", a,b,c);
 
     return 0;
 }
