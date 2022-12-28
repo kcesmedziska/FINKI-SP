@@ -18,9 +18,7 @@ void sort(int *a,int *b,int *c){
             *b=*c;
             *c=temp;
         }
-
-
-          }
+}
 
 int main()
 {
