@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,m,broj;
+    scanf("%d %d", &m, &n);
+    for (int i=m;i<=n;i++){
+        broj=i;
+        while (broj>0){
+            if((broj%10)%2==0)
+                broj/=10;
+            else
+                break;
+        }
+        if(broj==0){
+            printf("%d", i);
+            break;
+        }
+    }
+    if(broj!=0)
+        printf("NE");
+
+    return 0;
+}
