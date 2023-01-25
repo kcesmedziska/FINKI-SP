@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a,b,zbir1=0,zbir2=0;
+    scanf("%d%d", &a,&b);
+    while(a>0){
+        zbir1=zbir1+a%10;
+        a/=10;
+    }
+    while(b>0){
+        zbir2=zbir2+b%10;
+        b/=10;
+    }
+    if(zbir1>zbir2)
+        printf("1");
+    else 
+        printf("0");
+    
+
+    return 0;
+}
