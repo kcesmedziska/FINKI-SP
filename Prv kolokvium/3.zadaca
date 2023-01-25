@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int n,max = 1, broj = 0,i,j,zbir;
+    scanf("%d", &n);
+    for(i = n-1; i > 0; i--){
+        zbir = 0;
+        for(j = 1; j <= i; j++){
+            if(i % j==0){
+                zbir += j;
+
+            }
+        }
+        if(max < zbir){
+            max = zbir;
+            broj = i;
+        }
+    }
+    printf("%d", broj);
+    return 0;
+}
