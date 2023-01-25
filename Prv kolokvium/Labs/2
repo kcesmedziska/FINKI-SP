@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,br5=0,br0=0,i;
+    for(i=0;i<5;i++){
+        scanf("%d", &n);
+        if(n==5)
+            br5++;
+        else if(n==0)
+            br0++;
+    }
+    if(br0>=3)
+        printf("1");
+    else 
+        printf("0");
+    
+    
+    return 0;
+}
