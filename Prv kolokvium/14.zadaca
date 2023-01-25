@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int br,temp,naj=0,zbir=0,digit,i=0;
+    while(scanf("%d", &br)){
+        temp=br;
+        zbir=0;
+        if(i!=0)
+            zbir+=naj;
+        naj=0;
+        while(temp>0){
+            zbir=zbir+temp%10;
+            if(temp%10>naj)
+                naj=temp%10;
+            temp/=10;
+        }
+        printf("%d: %d\n",br,zbir);
+        i++;
+    }
+
+    return 0;
+}
+
