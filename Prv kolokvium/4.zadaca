@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char c;
+    int n=0,i,zbir=0;
+    scanf("%c",&c);
+    while(c!='!')
+    {
+        if(c<='9'&&c>='0')
+        {
+            i = c - '0';
+            if(zbir==0){
+                zbir += i;
+            }
+            else if(zbir!=0){
+                n=n+ zbir*10 + i;
+                zbir = 0;
+            }
+        }
+        else{
+            n+=zbir;
+            zbir=0;
+        }
+        scanf("%c",&c);
+    }
+    if(c=='!')
+    {
+        n+=zbir;
+        zbir=0;
+    }
+    printf("%d",n);
+    return 0;
+}
+
