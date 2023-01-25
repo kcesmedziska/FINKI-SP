@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,zbir=0;
+    while(scanf("%x", &n)){
+        if(n=='.')
+            break;
+        zbir+=n;
+    }
+    if(zbir%16==0){
+        if(zbir%100==16)
+            printf("Poln pogodok");
+        else
+            printf("Pogodok");
+    }
+    else
+        printf("%d", zbir);
+
+
+    return 0;
+}
