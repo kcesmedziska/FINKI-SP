@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main(){
+    
+    int x,n,i,k,m,digit,digit1,flag=1;
+    scanf("%d %d",&n,&x);
+    for(i=n-1;i>=0;i--){      
+        flag=1;                 
+        for(m=i;m>0;m/=10){ 
+            k=x;
+            digit=m%10;         
+            while(k>0){ 
+                digit1=k%10;        
+                if(digit==digit1){  
+                    k/=10;          
+                    flag=0;
+            }
+                else 
+                  k/=10;
+            }
+        }
+        if(flag!=0){ 
+            printf("%d",i);
+            break;
+        }
+    }
+return 0; 
+}
