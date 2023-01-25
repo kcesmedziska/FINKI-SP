@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int br;
+    scanf("%d", &br);
+    if(br%10>(br%100)/10 && (br%100)/10>(br/100)%10 && (br/100)%10>br/1000)
+        printf("1");
+    else 
+        printf("0");
+            
+            
+    return 0;
+}
