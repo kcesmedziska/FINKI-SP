@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,i,temp, k,obraten,cifri;
+    scanf("%d", &n);
+    if(n < 10){
+        printf("Brojot ne e validen");
+        return 0;
+    }
+    for(i = n-1; i > 0; i--){
+        obraten = 0;
+        temp = i;
+        cifri = 0;
+        while(temp > 0){
+            obraten = obraten * 10 + temp % 10;
+            cifri++;
+            temp /= 10;
+
+        }
+        if(obraten % cifri==0){
+            printf("%d",i);
+            return 0;
+        }
+    }
+    printf("Brojot ne e validen");
+    return 0;
+}
