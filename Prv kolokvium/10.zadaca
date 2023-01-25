@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    
+    int broj,cifra1,cifra2,flag,flag2;
+    while(scanf("%d",&broj)){
+        if(broj>=10){
+            int temp=broj;
+            cifra1= temp % 10;
+            temp/=10;
+            cifra2= temp%10;
+            temp/=10;
+            if(cifra1 > cifra2){
+                flag=1;
+            }else if(cifra2 > cifra1){
+                flag=0;
+            }else {
+                continue;
+            }
+            cifra1=cifra2;
+            flag2=1;
+            while(temp>0){
+                cifra2= temp % 10;
+                temp/=10;
+                if(flag){
+                    if(cifra2 > cifra1){
+                        flag=0;
+                    }else {
+                        flag2=0;
+                        break;
+                    }
+                }else {
+                    if(cifra1 > cifra2) {
+                        flag = 1;
+                    }else{
+                        flag2=0;
+                        break;
+                    }
+                }
+                cifra1=cifra2;
+            }
+            if(flag2!=0){
+                printf("%d\n",broj);
+            }
+
+        }
+    }
+    return 0;
+}
