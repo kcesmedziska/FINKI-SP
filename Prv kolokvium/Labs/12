@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i=0,n,poeni,zbir=0;
+    float ar;
+    while(i<5){
+        scanf("%d", &poeni);
+        zbir+=poeni;
+        i++;
+    }
+    if(zbir>=0 && zbir<=50)
+        printf("Predmetot ne e polozen");
+    else if(zbir>=51 && zbir<=60)
+        printf("Ocenka: 6, poeni: %d", zbir);
+    else if(zbir>=61 && zbir<=70) 
+        printf("Ocenka: 7, poeni: %d", zbir);
+    else if(zbir>=71 && zbir<=80)
+        printf("Ocenka: 8, poeni: %d", zbir);
+    else if(zbir>=81 && zbir<=90)
+        printf("Ocenka: 9, poeni: %d", zbir);
+    else if(zbir>=91 && zbir<=100)
+        printf("Ocenka: 10, poeni: %d", zbir);
+        
+    if(zbir%10==0 && zbir<100 && zbir>50)
+        printf("\nIma uslov za povisoka ocenka");
+    else if(zbir<100 && zbir>50)
+        printf("\nNema uslov za povisoka ocenka");
+    
+    return 0;
+}
