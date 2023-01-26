@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x,i,n,br=0,br1,temp1;
+    scanf("%d", &x);
+    int temp=x;
+    while(temp>0){
+        temp/=10;
+        br++;       // br cifri na x
+    }
+    
+    while(scanf("%d", &n)){
+        temp1=n;
+        br1=0;
+        while(temp1>0){
+        temp1/=10;
+        br1++;       
+    }
+        if(br1==br)
+            printf("%d\n", n);
+    }
+
+
+    return 0;
+}
