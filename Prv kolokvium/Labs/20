@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a,b,i;
+    float br=0,br1=0,p=0;
+    scanf("%d%d", &a,&b);
+    for(i=a+1;i<=b;i++){
+        if(i%2==0 && i%7==0){
+            printf("%d\n", i);
+            br++;
+        }
+        if(i%2!=0 && i%3!=0){
+            printf("%d\n", i);
+            br++;
+        }
+        br1++;
+    }
+    p=(br/br1)*100;
+    if(p>0)
+        printf("%.2f%%", p);
+    else
+        printf("0");
+    
+    
+    return 0;
+}
