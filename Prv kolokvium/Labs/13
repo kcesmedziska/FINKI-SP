@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,temp;
+    scanf("%d", &n);
+    
+    if(n%10>n/10)
+        temp=(n%10)*10+n/10;
+    else
+        temp=n;
+    printf("%d", temp*temp);
+    
+    return 0;
+}
