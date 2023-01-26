@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int km,cena=80;
+    float ddv;
+    scanf("%d", &km);
+    
+    if(km>5 && km<=8)
+        cena=((float)cena+20*(km-5))*1.20;
+    if(km>8)
+        cena=((float)cena+20*3+25*(km-8))*1.20;
+    printf("%d denari", cena);
+    
+    return 0;
+}
