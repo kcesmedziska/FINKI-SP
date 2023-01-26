@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i=0,n,poeni,zbir=0;
+    float ar;
+    while(i<5){
+        scanf("%d", &poeni);
+        if(poeni>=0 && poeni<=49){
+            printf("5 ");
+            zbir+=5;
+        }
+        else if(poeni>=50 && poeni<=59){
+            printf("6 ");
+            zbir+=6;
+        }
+        else if(poeni>=60 && poeni<=69){ 
+            printf("7 ");
+            zbir+=7;
+        }
+        else if(poeni>=70 && poeni<=79){
+            printf("8 ");
+            zbir+=8;
+        }
+        else if(poeni>=80 && poeni<=89){
+            printf("9 ");
+            zbir+=9;
+        }
+        else if(poeni>=90 && poeni<=100){
+            printf("10 ");
+            zbir+=10;
+        }
+        i++;
+    }
+    ar=(float)zbir/5;
+    printf("\n%.2f", ar);
+    
+    return 0;
+}
