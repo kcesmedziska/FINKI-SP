@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int iznos;
+    float a,b,c,d,e,ddv=0,n;
+    scanf("%f%f%f%f%f", &a,&b,&c,&d,&e);
+    scanf("%d", &iznos);
+    n=d-b;
+    if(iznos<=b)
+        ddv=iznos*(a/100);
+    else if(iznos>b && iznos<=d)
+        ddv=b*(a/100)+(iznos-b)*(c/100);
+    else 
+        ddv=b*(a/100)+n*(c/100)+(iznos-(b+n))*(e/100);
+    
+    printf("%.2f", ddv);
+    
+    return 0;
+}
