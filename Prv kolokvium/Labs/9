@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    
+    int i=0, n=3, iznos;
+    float ddv=0.0;
+    char tip_na_danok;
+    while(i<n){
+        scanf("%d %c", &iznos, &tip_na_danok);
+            if (tip_na_danok == 'A' || tip_na_danok == 'a')
+               ddv=ddv+iznos*0.18;
+            else if (tip_na_danok=='B' || tip_na_danok=='b')
+                ddv=ddv+iznos*0.05;
+            else if (tip_na_danok=='V' || tip_na_danok=='v')
+                ddv=ddv+iznos*0.0;
+        i++;
+    }
+    printf("%.2f", ddv);
+    
+    return 0;
+}
