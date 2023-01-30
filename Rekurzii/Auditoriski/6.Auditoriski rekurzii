@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int NZD(int m, int n){
+    if (n==0) 
+        return m;
+    return NZD(n, m % n);
+}
+
+    int main() {
+    int i, n, a[100],nzd;
+    scanf("%d", &n);
+    for (i=0; i<n; ++i){
+        scanf("%d", &a[i]);
+      }
+    nzd = NZD(a[0], a[1]);
+    for (i=2; i<n; ++i){
+        nzd = NZD(nzd, a[i]);
+    }
+      printf("NZD na elementite od nizata e %d",nzd);
+      return 0;
+
+}
+
