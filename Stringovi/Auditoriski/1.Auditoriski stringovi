@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int brojac(char str[], char c){
+    int vk=0,i;
+    for(i=0;i<strlen(str);i++)
+        while(str[i] != '\0'){
+            if(str[i]==c)
+                vk++;
+        str++;
+    }
+    return vk;
+}
+
+/* 
+so pointer 
+
+int brojac(char *str, char c){
+    int vk=0;
+    while(*str != '\0'){
+        if(*str==c)
+            vk++;
+        str++;
+    }
+    return vk;
+}
+*/
+
+
+int main()
+{
+    char s[100],c;
+    gets(s);
+    c=getchar();
+    printf("%d\n", brojac(s,c));
+
+    return 0;
+}
