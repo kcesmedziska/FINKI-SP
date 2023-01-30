@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int zbir(int n){
+    if(n==0)
+        return 0;
+    else
+        return n%10 + zbir(n/10);
+}
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    printf("Zbirot na cifri na %d e %d", n, zbir(n));
+
+    return 0;
+}
