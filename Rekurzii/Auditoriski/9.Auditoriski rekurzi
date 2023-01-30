@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int najgolem(int niza[],int n){
+    if(n==0)
+        return niza[n];
+    if(niza[n]<niza[n-1])
+        return niza[n-1];
+    else
+        return niza[n];
+    return najgolem(niza, n-1);
+}
+
+int main()
+{
+    int i,n,a[100];
+    scanf("%d", &n);
+    for(i=0;i<n;i++)
+        scanf("%d", &a[i]);
+
+    printf("Najgolem e %d", najgolem(a, n-1));
+
+
+    return 0;
+}
