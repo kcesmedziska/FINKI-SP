@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int zbir(int niza[], int n){
+    if(n==0)
+        return niza[n];
+    else
+        return niza[n]+zbir(niza,n-1);
+}
+
+int main()
+{
+    int i,n,a[100];
+    scanf("%d", &n);
+    for(i=0;i<n;i++)
+        scanf("%d", &a[i]);
+
+    printf("Zbirot e %d", zbir(a,n-1));
+
+
+    return 0;
+}
