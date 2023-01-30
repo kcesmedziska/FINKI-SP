@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define max 100
+
+int main()
+{
+    int poz, dol;
+    char c[max], c1[max];
+    gets(c);
+    scanf("%d %d", &poz,&dol);
+    if(poz<=strlen(c)){
+        poz-=1;
+        strncpy(c1, c+poz, dol);
+        c1[dol]='\0';
+        puts(c1);
+    }
+    else
+        printf("Nevaliden vnes");
+
+
+    return 0;
+}
