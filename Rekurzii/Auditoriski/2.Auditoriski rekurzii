@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int prost(int n, int i) {
+    if (n % i == 0)
+        return 0;
+    else if (i * i > n)
+        return 1;
+    else return prost(n, i + 2);
+}
+
+int pogolem(int n){
+    if(prost(n+1,2)!=0)
+        return n+1;
+    else
+        return pogolem(n+1);
+}
+
+int main()
+{
+    int n,raz=0;
+    scanf("%d", &n);
+    raz=pogolem(n)-n;
+    printf("%d-%d=%d", pogolem(n),n,raz);
+
+    return 0;
+}
