@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define max 100
+
+int main()
+{
+    int i,j,n,mat[max][max];
+    scanf("%d", &n);
+    for(i=0;i<n;i++)
+        for(j=0;j<n;j++)
+            scanf("%d", &mat[i][j]);
+    for(i=0;i<n;i++)
+        for(j=0;j<n;j++)
+            if(i>j && i+j>=n)
+                mat[i][j]=mat[i][j]*(-1);
+    for(i=0;i<n;i++){
+        for(j=0;j<n;j++)
+            printf("%d ", mat[i][j]);
+        printf("\n");
+    }
+    
+    return 0;
+}
