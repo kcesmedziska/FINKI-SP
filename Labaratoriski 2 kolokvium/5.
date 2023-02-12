@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n=0,a[100],L,R,V,I,i,j,br;
+    scanf("%d", &br);
+    while(br!=-1){
+        a[n]=br;
+        n++;
+        scanf("%d", &br);
+    }
+    for(i=0;i<3;i++){
+        scanf("%d%d%d%d", &L,&R,&V,&I);
+        for(j=L+I;j<=R-I;j++)
+            a[j]=a[j]+V;
+    }
+    
+    for(i=0;i<n;i++)
+        printf("%d", &a[i]);
+    
+    
+    return 0;
+}
