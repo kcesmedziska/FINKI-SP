@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define max 100
+
+int main()
+{
+    int m,n,i,j,mat[max][max],tmat[max][max],flag;
+    scanf("%d%d", &m,&n);
+    for(i=0;i<m;i++)
+        for(j=0;j<n;j++)
+            scanf("%d", &mat[i][j]);
+    for(i=0;i<m;i++)
+        for(j=0;j<n;j++){
+            tmat[i][j]=mat[j][i];
+        }        
+    for(i=0;i<m;i++){
+        flag=1;
+        for(j=0;j<n;j++){
+            if(mat[i][j]!=tmat[i][j])
+                flag=0;
+        }
+    }
+    if(flag==0){
+        printf("-1\n");
+        for(i=0;i<m;i++){
+            for(j=0;j<n;j++)
+                printf("%d ",mat[i][j]);
+            printf("\n");
+        }
+    }
+    else {
+        printf("1\n");
+        for(i=0;i<m;i++){
+            for(j=0;j<n;j++)
+                printf("%d ",mat[i][j]);
+            printf("\n");
+        }
+    }
+    return 0;
+}
