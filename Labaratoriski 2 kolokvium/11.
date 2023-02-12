@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define max 100
+
+int main()
+{
+    int n,m,x_igrac,y_igrac,x_topka,y_topka,x1_gol,y1_gol,x2_gol, y2_gol,mat[max][max], x,y;
+    scanf("%d%d", &n,&m);   //golemina na teren
+    scanf("%d%d", &x_igrac,&y_igrac);  //koordinati na igrac
+    scanf("%d%d", &x_topka,&y_topka);  //koordinati na topka
+    scanf("%d%d%d%d", &x1_gol,&y1_gol,&x2_gol,&y2_gol);  //koordinati na golovi 1 i 2 
+    scanf("%d%d", &x,&y);
+    mat[n][m];
+    
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(i==x_igrac && j==y_igrac)
+                printf("i ");
+            else if(i==x_topka && j==y_topka)
+                printf("o ");
+            else if(i==x1_gol && j==y1_gol)
+                printf("] ");
+            else if(i==x2_gol && j==y2_gol)
+                printf("] ");
+            else 
+                printf("- ");
+            
+        }
+        printf("\n");
+    }
+    if((x_topka+x==x1_gol && y_topka+y==y1_gol) || (x_topka+x==x2_gol && y_topka+y==y2_gol))
+        printf("GOAL!");
+    else if(x_topka+x>n || y_topka+y>m)
+        printf("OUT!");
+    else{
+        printf("Novata pozicija na topkata e (%d, %d)\n", x_topka+x,y_topka+y);
+        for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(i==x_igrac && j==y_igrac)
+                printf("i ");
+            else if(i==(x_topka+x) && j==(y_topka+y))
+                printf("o ");
+            else if(i==x1_gol && j==y1_gol)
+                printf("] ");
+            else if(i==x2_gol && j==y2_gol)
+                printf("] ");
+            else 
+                printf("- ");
+            
+        }
+        printf("\n");
+      }
+    } 
+    
+    return 0;
+}
