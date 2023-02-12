@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main()
+{
+    int n,niza[100],br=0;
+    float p1,p2;
+    scanf("%d", &n);
+    for(int i=0;i<n;i++)
+        scanf("%d", &niza[i]);
+    for(int i=0;i<n;i++){
+        br++;
+        if(i%2==0)
+            if (niza[i]%2==0)
+                p1++;
+        if(i%2!=0)
+            if(niza[i]%2!=0)
+                p2++;
+        
+    }
+    p1=(p1/br)*100;
+    p2=(p2/br)*100;
+    if(p1>=50 && p2<=30)
+        printf("1");
+    else 
+        printf("0");
+    
+    return 0;
+}
