@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i=0,j,a[100],raz=0,n=0,br;
+    while(scanf("%d", &br)){
+        a[n++]=br;
+    
+    for(i=0;i<n;i++)
+        for(j=i+1;j<n;j++)
+            if(a[i]==a[j]){
+                raz=j-i;
+                a[j]=a[j]+raz;
+            }
+    }
+    for(i=0;i<n;i++)
+        printf("%d ", a[i]);
+    
+        
+    return 0;
+}
