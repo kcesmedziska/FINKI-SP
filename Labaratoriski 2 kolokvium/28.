@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void sort(int *x, int *y, int *z)
+{
+    int tmp;
+    if(*z>*y){
+        tmp=*z;
+        *z=*y;
+        *y=tmp;
+    }
+    if(*y>*x){
+        tmp=*x;
+        *x=*y;
+        *y=tmp;
+    }
+    if(*z>*y){
+        tmp=*y;
+        *y=*z;
+        *z=tmp;
+    }
+}
+
+int main() {
+
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+
+    sort(&a, &b, &c);
+
+    printf("%d %d %d", a, b, c);
+
+    return 0;
+}
