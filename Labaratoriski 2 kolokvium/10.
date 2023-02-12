@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define max 100
+
+int main()
+{
+    int n,i,j,m[max][max];
+    scanf("%d", &n);
+    for(i=0;i<n;i++)
+        for(j=0;j<n;j++)
+            scanf("%d", &m[i][j]);
+    for(i=0;i<n;i++){
+        for(j=0;j<n;j++){
+            if(i==j)
+                if(m[i][j]>0)
+                    printf("%3d ", m[i][j]*(-1));
+                else
+                    printf("%3d ", abs(m[i][j]));
+            else 
+                printf("%3d ", m[i][j]);
+    }
+    printf("\n");
+    }
+    return 0;
+}
