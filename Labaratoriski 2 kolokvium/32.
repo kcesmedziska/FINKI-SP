@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int reverseNumber(int number){
+    int obr=0,temp=number;
+    while(temp!=0){
+        obr=obr*10+temp%10;
+        temp/=10;
+    }
+    return obr;
+}
+int isPalindrome(int number){
+    if(reverseNumber(number)==number)
+        return 1;
+    else 
+        return 0;
+}
+int containsDigits(int number){
+    if(number==0)
+        return 1;
+    if(number%10>4)
+        return 0;
+    return containsDigits(number/10);
+    
+}
+
+
+int main()
+{
+    int i, a,b;
+    scanf("%d%d", &a,&b);
+    for(i=a;i<b;i++)
+        if(isPalindrome(i)!=0 && containsDigits(i)!=0)
+            printf("%d\n", i);
+    
+    return 0;
+}
