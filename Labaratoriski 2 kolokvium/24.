@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int sumacifri(int br){
+    if (br==0)
+        return 0;
+    else
+        return(br%10+sumacifri(br/10));
+}
+int rastecki(int br){
+    if(br<10)
+        return 1;
+    else 
+        if(br%10>(br/10)%10)
+            return rastecki(br/10);
+        else 
+            return 0;
+}
+
+int main()
+{
+    int n,i,br;
+    scanf("%d", &n);
+    for(i=0;i<n;i++){
+        scanf("%d", &br);
+        if (rastecki(br))
+        printf("%d (suma: %d)\n",br, sumacifri(br));
+    }
+    
+    return 0;
+}
+
