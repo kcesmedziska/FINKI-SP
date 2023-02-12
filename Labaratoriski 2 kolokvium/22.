@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int palindrom(int br){
+    int obr=0,temp=br;
+    while(temp>0){
+        obr=obr*10+temp%10;
+        temp=temp/10;
+    }
+    if(br==obr)
+        return 1;
+    else 
+        return 0;
+}
+
+int sumacifri(int br){
+    if (br==0)
+        return 0;
+    else 
+        return(br%10+sumacifri(br/10));
+}
+int brcifri(int br){
+    int brojac=0;
+    while(br>0){
+        brojac++;
+        br/=10;
+    }
+    return brojac;
+}
+
+int main()
+{
+    int br;
+    while(scanf("%d", &br)){
+        if(palindrom(br))
+            printf("%d\n", sumacifri(br));
+        else 
+            printf("%d\n", brcifri(br));
+    }
+    
+    return 0;
+}
