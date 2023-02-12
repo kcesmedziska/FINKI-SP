@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int smenetBroj (int n){
+    if(n==0) {
+        return 0;
+    }
+    int cifra=n %10;
+    if(cifra %2 == 0){
+        cifra=0;
+    }
+    else{
+        cifra = cifra-1;
+    }
+    return cifra+10* smenetBroj(n/10);
+}
+int main(){
+    int n;
+    scanf("%d", &n);
+    printf("Brojot e %d", smenetBroj(n));
+    return 0;
+}
