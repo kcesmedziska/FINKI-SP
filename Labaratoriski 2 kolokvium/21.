@@ -1,0 +1,28 @@
+#include<stdio.h>
+int najgolemaNeparnaCifra(int n){
+    if(n<10){
+        if(n%2==0)
+            return 0;
+        else
+            return n;
+    }
+    else{
+        int cif=n%10;
+        if(cif%2==0)
+            return najgolemaNeparnaCifra(n/10);
+        else{
+            if(cif<najgolemaNeparnaCifra(n/10))
+                return najgolemaNeparnaCifra(n/10);
+            else return cif;
+        }
+    }
+}
+
+int main(){
+    int a,b,i;
+
+    scanf("%d %d",&a,&b);
+
+    for(i=a;i<=b;i++)
+        printf("%d -> %d\n",i,najgolemaNeparnaCifra(i));
+}
